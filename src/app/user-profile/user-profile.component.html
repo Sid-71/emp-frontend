@@ -1,0 +1,76 @@
+<p>user-profile works!</p>
+
+
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary float-right m-2" 
+data-toggle="modal" 
+data-target="#exampleModal"
+(click)="addClick()"
+data-backdrop="static" data-keyboard="false"
+>
+    Add Employee
+  </button> -->
+  
+  <!-- Modal -->
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <button type="button" class="close" 
+          data-dismiss="modal" aria-label="Close"
+         
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-emp [emp]="userData" ></app-add-edit-emp>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+            <th>Department</th>
+            <!-- <th>DateOfJoining</th> -->
+            <th>Role</th>
+            <th>Email</th>
+            <th>Options</th>
+        </tr>
+
+    </thead>
+    <tbody>
+       <tr>
+          <td>{{userData.EmployeeId}}</td>
+          <td>{{userData.EmployeeName}}</td>
+          <td>{{userData.Department}}</td>
+          <!-- <td>{{dataItem.DateOfJoining}}</td> -->
+          <td>{{(userData.isAdmin)?"Admin":"User"}}</td>
+          <td>{{userData.email}}</td>
+          <td>
+            <!-- <button type="button" class="btn btn-light mr-1"
+            data-toggle="modal" 
+data-target="#exampleModal"
+data-backdrop="static" data-keyboard="false"
+            >
+                Edit
+            </button> -->
+           
+          </td>
+        </tr>
+    </tbody>
+
+</table>
